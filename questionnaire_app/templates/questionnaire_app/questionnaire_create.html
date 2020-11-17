@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Создание анкеты
+{% endblock title %}
+
+{% block content %}
+    <h1>Создание анкеты</h1>
+    <form action="{% url 'questionnaire_create' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать</button>
+    </form>
+{% endblock content %}

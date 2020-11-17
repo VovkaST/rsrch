@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+    Детали
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'questionnaires_list' %}">Все анкеты</a>
+    <br>
+    {{ object }}
+{% endblock %}

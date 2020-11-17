@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Добро пожаловать!
+{% endblock title %}
+
+{% block content %}
+    <ul>
+        <li><a href="{% url 'questionnaires_list' %}">Все анкеты</a></li>
+        <li><a href="{% url 'forms_list' %}">Все формы</a></li>
+    </ul>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Опросник 2.0{% endblock title %}</title>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+</head>
+<body>
+    {% block content %}{% endblock content %}
+</body>
+</html>

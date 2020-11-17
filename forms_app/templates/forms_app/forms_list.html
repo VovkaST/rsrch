@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Все формы{% endblock title %}
+
+{% block content %}
+    <h1>Все формы</h1>
+    <ul>
+        {% for form in forms_list %}
+            <li><a href="{% url 'form_view' form.slug %}">{{ form.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'form_create' %}">Создать новую</a>
+{% endblock content %}
