@@ -1,14 +1,8 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import HiddenInput
-from django.forms.utils import ErrorList
 
 from forms_app.models import Forms
-
-
-FIELD_TYPES = (
-    ('textarea', 'textarea'),
-)
 
 
 class FormsCreateForm(forms.ModelForm):
@@ -19,7 +13,11 @@ class FormsCreateForm(forms.ModelForm):
             'form_fields': HiddenInput()
         }
 
+
 class FieldForm(forms.Form):
+    FIELD_TYPES = (
+        ('textarea', 'textarea'),
+    )
     name = forms.CharField(label='Название поля', min_length=3, max_length=255, required=True)
     type = forms.Field(label='Тип поля', widget=forms.Select(choices=FIELD_TYPES))
     var_name = forms.SlugField(label='Название переменной', min_length=3, max_length=255)

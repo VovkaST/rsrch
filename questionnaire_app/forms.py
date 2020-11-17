@@ -1,11 +1,11 @@
 from django import forms
-from forms_app.models import Forms
+from questionnaire_app.models import Questionnaires
 
 
-class QuestionnaireFormCreateForm(forms.ModelForm):
+class QuestionnaireCreateForm(forms.ModelForm):
     class Meta:
-        model = Forms
-        exclude = ('slug', 'meta', 'created_at', )
-        # widgets = {
-        #     'slug': forms.TextInput()
-        # }
+        model = Questionnaires
+        exclude = ('slug', 'created_at', )
+        widgets = {
+            'meta': forms.HiddenInput()
+        }
