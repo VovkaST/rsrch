@@ -2,7 +2,7 @@ import django_heroku
 
 from rsrch.settings.base import *
 
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 SITE_HOST = 'https://rsrch.herokuapp.com'
 
