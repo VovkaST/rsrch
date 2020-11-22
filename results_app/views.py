@@ -22,6 +22,9 @@ class ResultsListView(generic.ListView):
     model = Results
     template_name = 'results_app/results_list.html'
 
+    def get_queryset(self):
+        return super().get_queryset().filter(filled_at__isnull=False)
+
 
 class ResultsCreate(generic.CreateView):
     model = Results

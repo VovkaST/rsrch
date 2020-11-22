@@ -11,6 +11,7 @@
 .questionnaire_results th {
     border: 1px solid #808080;
     border-collapse: collapse;
+    font-size: 0.8em;
 }
 .questionnaire_results th {
     text-align: center;
