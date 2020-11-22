@@ -1,10 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block scripts %}
-    <script type="text/javascript" src="{% static  'tinymce/jquery.tinymce.min.js' %}"></script>
-    <script type="text/javascript" src="{% static  'tinymce/tinymce.min.js' %}"></script>
-{% endblock scripts %}
+{% extends 'tinymce_base.html' %}
 
 {% block title %}
     {{ block.super }}: Создание шаблона
@@ -20,13 +14,6 @@
     В поле ввода введите содержание документа. Для подстановки используйте имена переменных, в фигурных скобках
     ({var_name}).
 
-    <script>
-        tinymce.init({
-            selector: '.tinymce',
-            language: 'ru',
-            spellcheck: true,
-            height: 300,
-        });
-    </script>
+    {{ block.super }}
 {% endblock content %}
 

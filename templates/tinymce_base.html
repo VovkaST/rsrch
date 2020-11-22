@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static  'tinymce/jquery.tinymce.min.js' %}"></script>
+    <script type="text/javascript" src="{% static  'tinymce/tinymce.min.js' %}"></script>
+{% endblock scripts %}
+
+{% block content %}
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language: 'ru',
+            spellcheck: true,
+            height: 300,
+        });
+    </script>
+{% endblock content %}

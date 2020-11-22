@@ -1,14 +1,10 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'tinymce_base.html' %}
 
-{% block scripts %}
-    <script type="text/javascript" src="{% static  'tinymce/jquery.tinymce.min.js' %}"></script>
-    <script type="text/javascript" src="{% static  'tinymce/tinymce.min.js' %}"></script>
-{% endblock scripts %}
 
 {% block title %}
     {{ block.super }}: Страница завершения "{{ object.title }}"
 {% endblock title %}
+
 
 {% block content %}
     <h1>Страница завершения "{{ object.title }}"</h1>
@@ -20,13 +16,6 @@
     В поле ввода введите содержание документа. Для подстановки используйте имена переменных, в фигурных скобках
     ({var_name}).
 
-    <script>
-        tinymce.init({
-            selector: '.tinymce',
-            language: 'ru',
-            spellcheck: true,
-            height: 300,
-        });
-    </script>
+    {{ block.super }}
 {% endblock content %}
 
