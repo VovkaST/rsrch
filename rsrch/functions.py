@@ -2,9 +2,10 @@ import hashlib
 
 import pdfkit
 
-from rsrch.settings import (
-    PDF_BASE_TEMPLATE, PDF_OPTIONS, PDF_RESULTS_DIR, SITE_HOST
+from rsrch.settings.base import (
+    PDF_BASE_TEMPLATE, PDF_OPTIONS, PDF_RESULTS_DIR
 )
+from rsrch.settings.productive import SITE_HOST
 
 
 class Context(dict):
