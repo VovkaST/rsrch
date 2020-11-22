@@ -3,4 +3,24 @@
 
 wkhtmltopdf
 libpcre2-16-0
+libqt5core5a
+libdbusmenu-qt5-2
+libqt5dbus5
+libqt5gui5
+libqt5network5
+libqt5pas1
+libqt5positioning5
+libqt5printsupport5
+libqt5qml5
+libqt5quick5
+libqt5sensors5
+libqt5svg5
+libqt5webchannel5
+libqt5webkit5
+libqt5widgets5
+libqt5x11extras5
+qt5-gtk-platformtheme
+qt5-image-formats-plugins
+qttranslations5-l10n
+
 
