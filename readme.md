@@ -27,25 +27,6 @@ user@dev-note:~/develop$ source .venv/bin/activate
 (.venv) user@dev-note:~/develop$ pip3 -r install requirements.txt
 ```
 
-#### Настройка, тестовые данные и запуск
-Все настройки указаны в `settings.py` кроме:
-```python
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-```
-Константы необходимы для отправки писем (используется smtp сервер mail.ru) и должны быть размещены в файле 
-`settings_local.py` в одном каталоге с основным файлом настроек.
-
-Восстанавливаем фикстуры:
-```commandline
-(.venv) user@dev-note:~/develop$ python3 manage.py loaddata fixtures/datadump.json
-```
-
-И запускаем сервер:
-```commandline
-(.venv) user@dev-note:~/develop$ python3 manage.py runserver
-```
-
 
 #### База данных
 Для хранения данных используется PostgreSQL >= 9.6.
@@ -68,6 +49,25 @@ CREATE DATABASE animals
 (.venv) user@dev-note:~/develop$ python3 manage.py migrate
 ```
 
+
+#### Настройка, тестовые данные и запуск
+Все настройки указаны в `settings.py` кроме:
+```python
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+```
+Константы необходимы для отправки писем (используется smtp сервер mail.ru) и должны быть размещены в файле 
+`settings_local.py` в одном каталоге с основным файлом настроек.
+
+Восстанавливаем фикстуры:
+```commandline
+(.venv) user@dev-note:~/develop$ python3 manage.py loaddata fixtures/datadump.json
+```
+
+И запускаем сервер:
+```commandline
+(.venv) user@dev-note:~/develop$ python3 manage.py runserver
+```
 
 #### Механика
 Предварительно создаются Форма опроса с набором полей, Шаблон документа для форматирования результатов и Страница 
