@@ -1,2 +1,6 @@
+# Для использования активировать Buildpack:
+#  https://github.com/heroku/heroku-buildpack-apt.git
+
 wkhtmltopdf
+libpcre2-16-0
 
