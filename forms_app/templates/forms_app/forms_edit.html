@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Изменение формы анкеты{% endblock title %}
+
+{% block scripts %}
+    <script src="{% static 'js/jquery.formset.js' %}"></script>
+{% endblock scripts %}
+
+{% block content %}
+    <h1>Изменение формы "{{ object.title }}"</h1>
+    <form action="{% url 'form_edit' object.slug %}" method="post" id="new_form_id">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="non_form_errors">
+            {% if formset.non_form_errors %}
+                <ul>
+                    {% for error in formset.non_form_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Название поля</th>
+                    <th>Тип поля</th>
+                    <th>Имя переменной</th>
+                </tr>
+                {% for form in formset %}
+                    <tr>
+                        {% for field in form %}
+                            <td>
+                                {{ field }}
+                                {{ field.errors }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {{ formset.management_form }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <script type="text/javascript">
+        $(function() {
+            $('#new_form_id tbody tr').formset({
+                addText: 'Добавить поле',
+                deleteText: 'Удалить',
+                prefix: 'field',
+            });
+        })
+    </script>
+{% endblock content %}

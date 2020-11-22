@@ -5,7 +5,7 @@
     <h1>Все формы</h1>
     <ul>
         {% for form in forms_list %}
-            <li><a href="{% url 'form_view' form.slug %}">{{ form.title }}</a></li>
+            <li><a href="{% url 'form_edit' form.slug %}">{{ form.title }}</a></li>
         {% endfor %}
     </ul>
     <a href="{% url 'form_create' %}">Создать новую</a>
