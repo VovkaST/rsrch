@@ -14,6 +14,7 @@ from questionnaire_app.models import Questionnaires
 from results_app.forms import TemplatedForm
 from rsrch.functions import get_pdf_content, make_pdf, str_m5, fill_template
 from results_app.models import Results
+from rsrch.settings.base import PDF_RESULTS_DIR, EMAIL_HOST_USER
 
 
 class ResultsListView(generic.ListView):
