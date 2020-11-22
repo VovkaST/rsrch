@@ -9,10 +9,6 @@ class QuestionnairesListView(generic.ListView):
     model = Questionnaires
 
 
-class QuestionnaireDetailView(generic.DetailView):
-    model = Questionnaires
-
-
 class QuestionnaireCreateView(generic.CreateView):
     form_class = QuestionnaireCreateForm
     template_name = 'questionnaire_app/questionnaire_create.html'
@@ -32,3 +28,12 @@ class QuestionnaireCreateView(generic.CreateView):
             })
             kwargs['data'] = data
         return kwargs
+
+
+class QuestionnaireUpdateView(generic.UpdateView):
+    model = Questionnaires
+    form_class = QuestionnaireCreateForm
+    template_name = 'questionnaire_app/questionnaires_edit.html'
+
+    def get_success_url(self):
+        return reverse('questionnaires_list')
