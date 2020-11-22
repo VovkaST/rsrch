@@ -1,0 +1,17 @@
+.fixed-container {
+    width: 1024px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.errorlist {
+    border: 1px solid #ffbebe;
+    background-color: #ffd4d4;
+}
+.questionnaire_results td,
+.questionnaire_results th {
+    border: 1px solid #808080;
+    border-collapse: collapse;
+}
+.questionnaire_results th {
+    text-align: center;
+}

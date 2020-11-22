@@ -49,3 +49,7 @@ class FormUpdateView(DynamicFormMixin, generic.UpdateView):
 class FormCreateView(DynamicFormMixin, generic.CreateView):
     template_name = 'forms_app/form_create.html'
     form_class = FormsCreateForm
+    model = Forms
+
+    def get_object(self, queryset=None):
+        return

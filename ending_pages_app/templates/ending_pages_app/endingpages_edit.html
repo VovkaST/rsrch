@@ -11,7 +11,7 @@
     <form action="{% url 'ending_page_edit' object.slug %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Сохранить</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
     </form>
     В поле ввода введите содержание документа. Для подстановки используйте имена переменных, в фигурных скобках
     ({var_name}).

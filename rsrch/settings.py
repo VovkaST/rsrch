@@ -148,6 +148,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
     ('js', STATIC_ROOT / 'js'),
+    ('css', STATIC_ROOT / 'css'),
 ]
 
 PDF_RESULTS_DIR = MEDIA_ROOT / 'results'
