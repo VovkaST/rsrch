@@ -17,6 +17,7 @@ class FormsCreateForm(forms.ModelForm):
 class FieldForm(forms.Form):
     FIELD_TYPES = (
         ('textarea', 'textarea'),
+        ('input', 'input'),
     )
     name = forms.CharField(label='Название поля', min_length=3, max_length=255, required=True)
     type = forms.Field(label='Тип поля', widget=forms.Select(choices=FIELD_TYPES))

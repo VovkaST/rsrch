@@ -5,7 +5,10 @@
     <h1>Все анкеты</h1>
     <ul>
         {% for questionnaire in questionnaires_list %}
-            <li><a href="{% url 'questionnaire_view' questionnaire.slug %}">{{ questionnaire.title }}</a></li>
+            <li>
+                <a href="{% url 'questionnaire_view' questionnaire.slug %}">{{ questionnaire.title }}</a>
+                <a href="{% url 'results_create' questionnaire.id %}">Заполнить</a>
+            </li>
         {% endfor %}
     </ul>
     <a href="{% url 'questionnaire_create' %}">Создать новую</a>

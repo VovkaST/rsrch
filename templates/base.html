@@ -8,6 +8,9 @@
     {% block scripts %}{% endblock scripts %}
 </head>
 <body>
+    {% block breadcumbs %}
+        <a href="{% url 'index' %}">Главная</a>
+    {% endblock breadcumbs %}
     {% block content %}{% endblock content %}
 </body>
 </html>

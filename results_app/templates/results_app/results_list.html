@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Результаты заполнения анкет
+{% endblock title %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Дата заполнения</th>
+            <th>Данные которые собираются автоматически</th>
+            <th>Значения из формы</th>
+            <th>Хэш</th>
+            <th>Ссылка на pdf</th>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.filled_at }}</td>
+                <td>{{ object.meta }}</td>
+                <td>{{ object.data }}</td>
+                <td>{{ object.data_hash }}</td>
+                <td><a href="{% url 'results_download' object.link_fill_out %}">Скачать</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock content %}

@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+from rsrch.setting_local import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'tinymce',
+
+    'doc_templates_app',
+    'ending_pages_app',
     'forms_app',
     'questionnaire_app',
     'results_app',
@@ -138,6 +143,42 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 STATICFILES_DIRS = [
     ('js', STATIC_ROOT / 'js'),
 ]
+
+PDF_RESULTS_DIR = MEDIA_ROOT / 'results'
+
+PDF_BASE_TEMPLATE = '''
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        {content}
+        <br>
+        С результатами заполнения анкеты Вы можете ознакомиться <a href={ending_page} target="_blank">здесь</a>.
+    </body>
+</html>
+'''
+
+
+PDF_OPTIONS = {
+    'encoding': 'UTF-8',
+    'page-size': 'A4',
+    'margin-top': '2cm',
+    'margin-right': '1cm',
+    'margin-bottom': '2cm',
+    'margin-left': '3cm',
+}
+
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+SERVER_EMAIL = EMAIL_HOST_USER
+
+SITE_HOST = 'http://localhost:8000'

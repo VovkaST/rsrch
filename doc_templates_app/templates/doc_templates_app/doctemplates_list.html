@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Все шаблоны документов
+{% endblock title %}
+
+{% block content %}
+    <h1>Все шаблоны</h1>
+    <ul>
+        {% for object in object_list %}
+            <li><a href="{% url 'doc_templates_view' object.slug %}">{{ object.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'doc_templates_create' %}">Создать новый</a>
+{% endblock content %}

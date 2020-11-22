@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Анкета "{{ results.questionnaire.title }}"
+{% endblock title %}
+
+{% block content %}
+    <h1>Благодарим за заполнение анкеты!</h1>
+    {{ page_content|safe }}
+    <a href={% url 'results_download' results.link_fill_out %}>Скачать анкету в формате PDF</a>.
+    <br>
+    Ваш уникальный код: {{ results.link_view_ending }}
+{% endblock content %}

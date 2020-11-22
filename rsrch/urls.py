@@ -18,10 +18,16 @@ from django.urls import path, include
 
 from rsrch.views import IndexView
 
+
 urlpatterns = [
+    path('tinymce/', include('tinymce.urls')),
+
     path('', IndexView.as_view(), name='index'),
     path('index/', IndexView.as_view()),
     path('admin/', admin.site.urls),
     path('forms/', include('forms_app.urls')),
     path('questionnaires/', include('questionnaire_app.urls')),
+    path('results/', include('results_app.urls')),
+    path('doc_tmpls/', include('doc_templates_app.urls')),
+    path('end_pgs/', include('ending_pages_app.urls')),
 ]

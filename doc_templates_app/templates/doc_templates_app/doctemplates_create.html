@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static  'tinymce/jquery.tinymce.min.js' %}"></script>
+    <script type="text/javascript" src="{% static  'tinymce/tinymce.min.js' %}"></script>
+{% endblock scripts %}
+
+{% block title %}
+    {{ block.super }}: Создание шаблона
+{% endblock title %}
+
+{% block content %}
+    <h1>Новый шаблон</h1>
+    <form action="{% url 'doc_templates_create' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    В поле ввода введите содержание документа. Для подстановки используйте имена переменных, в фигурных скобках
+    ({var_name}).
+
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language: 'ru',
+            spellcheck: true,
+            height: 300,
+        });
+    </script>
+{% endblock content %}
+

@@ -4,9 +4,14 @@
     {{ block.super }}: Добро пожаловать!
 {% endblock title %}
 
+{% block breadcumbs %}{% endblock %}
+
 {% block content %}
     <ul>
         <li><a href="{% url 'questionnaires_list' %}">Все анкеты</a></li>
         <li><a href="{% url 'forms_list' %}">Все формы</a></li>
+        <li><a href="{% url 'doc_templates_list' %}">Все шаблоны документов</a></li>
+        <li><a href="{% url 'results_list' %}">Результаты опросов</a></li>
+        <li><a href="{% url 'ending_pages_list' %}">Страницы завершения</a></li>
     </ul>
 {% endblock content %}

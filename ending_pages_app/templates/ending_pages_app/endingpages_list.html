@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}: Все страницы завершения
+{% endblock title %}
+
+{% block content %}
+    <h1>Все страницы завершения</h1>
+    <ul>
+        {% for object in object_list %}
+            <li><a href="{% url 'ending_page_view' object.slug %}">{{ object.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ending_page_create' %}">Создать новую</a>
+{% endblock content %}
