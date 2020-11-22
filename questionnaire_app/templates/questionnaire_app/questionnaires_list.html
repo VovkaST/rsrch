@@ -7,7 +7,7 @@
         {% for questionnaire in questionnaires_list %}
             <li>
                 <a href="{% url 'questionnaire_edit' questionnaire.slug %}">{{ questionnaire.title }}</a>
-                <a href="{% url 'results_create' questionnaire.id %}">Заполнить</a>
+                <a href="{% url 'results_create' questionnaire.id %}" class="btn btn-info">Заполнить</a>
             </li>
         {% endfor %}
     </ul>
