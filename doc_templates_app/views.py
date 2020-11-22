@@ -5,8 +5,13 @@ from doc_templates_app.forms import DocTemplatesForm
 from doc_templates_app.models import DocTemplates
 
 
-class DocTemplatesDetailView(generic.DetailView):
+class DocTemplatesUpdateView(generic.UpdateView):
     model = DocTemplates
+    form_class = DocTemplatesForm
+    template_name = 'doc_templates_app/doctemplates_edit.html'
+
+    def get_success_url(self):
+        return reverse('doc_templates_list')
 
 
 class DocTemplatesListView(generic.ListView):

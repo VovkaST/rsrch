@@ -1,12 +1,12 @@
 {% extends 'tinymce_base.html' %}
 
 {% block title %}
-    {{ block.super }}: Создание страницы завершения
+    {{ block.super }}: Шаблон "{{ object.title }}"
 {% endblock title %}
 
 {% block content %}
-    <h1>Новая страница завершения</h1>
-    <form action="{% url 'ending_page_create' %}" method="post">
+    <h1>Шаблон "{{ object.title }}"</h1>
+    <form action="{% url 'doc_templates_edit' object.slug %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Сохранить</button>
@@ -16,4 +16,3 @@
 
     {{ block.super }}
 {% endblock content %}
-
