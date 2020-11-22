@@ -145,6 +145,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+if not MEDIA_ROOT.is_dir():
+    MEDIA_ROOT.mkdir()
+
 STATICFILES_DIRS = [
     ('js', STATIC_ROOT / 'js'),
     ('css', STATIC_ROOT / 'css'),
