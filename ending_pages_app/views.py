@@ -17,5 +17,10 @@ class EndingPagesCreateView(generic.CreateView):
         return reverse('ending_pages_list')
 
 
-class EndingPagesDetailView(generic.DetailView):
+class EndingPagesUpdateView(generic.UpdateView):
     model = EndingPages
+    form_class = EndingPagesForm
+    template_name = 'ending_pages_app/endingpages_edit.html'
+
+    def get_success_url(self):
+        return reverse('ending_pages_list')
