@@ -47,6 +47,28 @@ EMAIL_HOST_PASSWORD = ''
 ```
 
 
+#### База данных
+Для хранения данных используется PostgreSQL >= 9.6.
+
+Создаем базу данных:
+```postgresql
+CREATE DATABASE animals
+  WITH OWNER = postgres
+    ENCODING = 'UTF8'
+    TABLESPACE = pg_default
+    TEMPLATE = template0;
+```
+
+Создаем миграции:
+```commandline
+(.venv) user@dev-note:~/develop$ python3 manage.py makemigrations
+```
+и применяем их:
+```commandline
+(.venv) user@dev-note:~/develop$ python3 manage.py migrate
+```
+
+
 #### Механика
 Предварительно создаются Форма опроса с набором полей, Шаблон документа для форматирования результатов и Страница 
 завершения для перенаправления пользователя по ссылке из письма. После этого создается Анкета с привязкой всех 
